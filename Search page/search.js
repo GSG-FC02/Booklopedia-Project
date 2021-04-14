@@ -87,3 +87,85 @@ function addCategoryBooks(category, index){
 for(let i=0; i<categories.length; i++){
     addCategoryBooks(categories[i],i)
 }
+
+// Define function to create container for search result books
+function createBookContainer2(url,name,author,bookId){
+    let resultContainer = document.createElement("div")
+    resultContainer.setAttribute("class",`result-container ${bookId}`)
+    resultContainer.addEventListener('click',addBook)
+
+    let resultCover = document.createElement("img")
+    resultCover.setAttribute("src",`${url}`)
+    resultCover.setAttribute("class",`result-cover ${bookId}`)
+    resultCover.addEventListener('click',addBook)
+    
+    let resultName = document.createElement("p")
+    resultName.setAttribute("class",`book-name ${bookId}`)
+    resultName.addEventListener('click',addBook)
+
+    let resultAuthor = document.createElement("p")
+    resultAuthor.setAttribute("class",`book-author ${bookId}`)
+    resultAuthor.addEventListener('click',addBook)
+
+    let nameText = document.createTextNode(name);
+    let authorText = document.createTextNode(author);
+
+    resultName.appendChild(nameText)
+    resultAuthor.appendChild(authorText)
+
+    resultContainer.appendChild(resultCover)
+    resultContainer.appendChild(resultName)
+    resultContainer.appendChild(resultAuthor)
+
+    document.querySelector(".result-section").appendChild(resultContainer)
+}
+
+// function to fetch search result books details
+document.querySelector(".fa-search").addEventListener("click", addResultBooks)
+function addResultBooks(){
+    document.querySelector(".categories-section").innerHTML = ""
+    document.querySelector(".result-section").innerHTML = ""
+    let value = document.querySelector(".search-button").value
+    if (value == ""){
+        alert("Please write something")
+    }
+    else{
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=${value}&maxResults=40`)
+        .then(response => {return response.json()})
+        .then(data => {
+            data.items.forEach(element => { 
+                if (element.volumeInfo.hasOwnProperty('imageLinks')
+                && element.volumeInfo.hasOwnProperty('authors')
+                && element.volumeInfo.hasOwnProperty('description')) {
+                       let cover = element.volumeInfo.imageLinks.thumbnail
+                       let name = element.volumeInfo.title
+                       let author = element.volumeInfo.authors[0]
+                       let bookId = element.id
+                       if(name.length > 30){
+                           name = name.slice(0,30) + "..."       
+                        }
+                        if(author.length > 15){
+                           author = author.slice(0,15) + "..."
+                        }
+                        createBookContainer2(cover,name,author,bookId)
+                }     
+            })
+        })
+    }
+}
+
+// Save category name in the localstorage
+function addCategory(event){
+    let catagoryArray = [];
+    catagoryArray.push(event.target.textContent)
+    localStorage.setItem('catagoryDetails', JSON.stringify(catagoryArray)); 
+    window.location.href = "..\\Category page\\category.html"
+}
+
+// Save book Id in the localstorage
+function addBook(event){
+    let bookArray = []
+    bookArray.push(event.target.className.split(" ")[1])
+    localStorage.setItem("bookDetails", JSON.stringify(bookArray))
+    window.location.href = "..\\Book page\\book.html"
+}
