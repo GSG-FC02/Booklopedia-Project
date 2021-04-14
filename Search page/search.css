@@ -3,9 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: #EEEEF3;
+}
 .search-page{
     padding: 25px 0;
-    background-color: #EEEEF3;
 }
 
 /* styling search section start */
