@@ -64,7 +64,7 @@
     font-weight: bolder;
     z-index: 2;
     color: #191927;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 .book-details p:first-child{
     margin: 0 0 10px 0;
@@ -78,4 +78,61 @@
     font-size: 10px;
 }
 /* styling header section end */
+
+/* styling description section start */
+.book-description-text{
+    width: 83%;
+    padding: 15px;
+    margin: 40px auto;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    background: #F2F2F2;
+    border-radius: 10px;
+    text-align: justify;
+    font-size: 12px;
+    line-height: 152.6%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.book-description-text::first-line{
+    font-family: 'Sofia';
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-indent: 10px;
+    color: #FCB80A;
+}
+/* styling description section end */
+
+/* Styling footer section start */
+.nav-bar {
+    height: 63px;
+    padding: 5px;
+    text-align: center;
+    position: fixed;
+    z-index: 100; 
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+.nav-bar li {
+    display: inline-block;
+    width: 60px;
+    height: 42px;
+    text-align: center;
+    border-radius: 7px;
+    padding-top: 8px;
+    font-size: 12px;
+}
+.nav-bar li:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.nav-bar a{
+    text-decoration: none;
+    color:black ;
+}
+/* Styling footer section end */
 
