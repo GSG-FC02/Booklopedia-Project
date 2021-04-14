@@ -34,3 +34,29 @@ function addBook(){
     localStorage.setItem('savedBooks',JSON.stringify(saveArray))
     document.querySelector(".save-button").textContent = "Unsave"
 }
+
+// Fetch book's details
+fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}`)
+    .then(response => {return response.json()})
+    .then(data => {
+        let cover = data.volumeInfo.imageLinks.thumbnail
+        let name = data.volumeInfo.title
+        let author = data.volumeInfo.authors
+        let pages = data.volumeInfo.pageCount
+        let description = data.volumeInfo.description
+        displayBook(cover,name,author,pages,description)
+    })
+
+// Function to create a container for book details
+function displayBook(cover,name,author,pages,description){
+    let backgroundImage = document.createElement("img")
+    document.querySelector(".book-header").appendChild(backgroundImage)
+    backgroundImage.src = `${cover}`
+    backgroundImage.setAttribute("class","background-image")
+
+    document.querySelector(".book-cover").src = `${cover}`
+    document.querySelector(".book-name").textContent = name
+    document.querySelector(".book-author").textContent = author
+    document.querySelector(".book-pages").textContent = `pages: ${pages}`
+    document.querySelector('.book-description-text').append(description)
+}
