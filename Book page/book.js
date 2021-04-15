@@ -1,5 +1,3 @@
-
-
 // Get the book's id from localStorage
 let bookId = JSON.parse(localStorage.getItem('bookDetails'))[0];
 
@@ -58,5 +56,5 @@ function displayBook(cover,name,author,pages,description){
     document.querySelector(".book-name").textContent = name
     document.querySelector(".book-author").textContent = author
     document.querySelector(".book-pages").textContent = `pages: ${pages}`
-    document.querySelector('.book-description-text').append(description)
+    document.querySelector('.book-description-text').innerHTML += (description)
 }

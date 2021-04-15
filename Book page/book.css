@@ -1,11 +1,12 @@
-
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-.book-page{
+body{
     background-color: #EEEEF3;
+}
+.book-page{
     padding-bottom: 50px;
 }
 
@@ -27,9 +28,9 @@
 .book-cover{
     position: absolute;
     width: 152px;
-    height: 219px;
-    left: 30px;
-    top: 71px;
+    height: 81%;
+    left: 8%;
+    top: 25%;
     z-index: 2;
     border-radius: 10px;
     box-shadow: -1px 4px 4px rgb(0 0 0 / 25%); 
