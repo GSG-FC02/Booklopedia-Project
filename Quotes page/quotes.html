@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Booklopedia" content="" />
     <link rel="stylesheet" href="quotes.css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
   </head>
   <body>
+    <!-- Quotes page -->
+    <div class="container">
+      <div class="card">
+        <p id="content"></p>
+        <button id="getQuote" onclick="getQuotes()">Another One</button>
+      </div>
+    </div>
+    <!-- Quotes page html ends -->
+
     <!-- Nav Bar -->
     <div class="nav_bar">
       <li><i class="fas fa-home"></i>
@@ -22,5 +28,6 @@
       <li><i class="fas fa-bookmark"></i>
         <br />Books</li>
     </div>
+    <script src="quotes.js"></script>
   </body>
 </html>

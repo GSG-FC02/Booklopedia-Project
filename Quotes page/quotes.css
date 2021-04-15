@@ -1,3 +1,27 @@
+/* Quotes page style */
+.card {
+  width: 311px;
+  height: 316px;
+  font-size: 20px;
+  margin: auto;
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 17px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 70px;
+}
+
+.card button {
+  width: 153px;
+  height: 47px;
+  background-color: black;
+  color: aliceblue;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+/* Quotes page style ends */
+
+
 /* Nav Bar Style */
 .nav_bar {
   height: 63px;
