@@ -1,9 +1,10 @@
 *{
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
-    background: #191927;
-  
+    box-sizing: border-box; 
+}
+body{
+  background: #191927;
 }
 
 .main-page {
@@ -35,12 +36,15 @@ background: #FCB80A;
 border-radius: 13px;
 width: 115px;
 height: 50px;
-font-family: ABeeZee;
-font-size: 17px;
-font-weight: 600;
-color: #191927;
-cursor: pointer;
+
 }
 button:focus{
-    outline: none;
+  outline: none;
+}
+button a{
+  font-family: 'ABeeZee';
+  font-size: 17px;
+  font-weight: 600;
+  color: #191927;
+  text-decoration: none;
 }

@@ -1,4 +1,5 @@
-let details =JSON.parse(localStorage.getItem('categoryDetails'))[0]
+// let details =JSON.parse(localStorage.getItem('categoryDetails'))[0]
+let details = "Art"
 let categoryName = document.createElement("h3");
 categoryName.setAttribute("class", "header-text");
 let text = document.createTextNode(details);
