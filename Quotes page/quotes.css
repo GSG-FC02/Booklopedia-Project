@@ -1,0 +1,52 @@
+/* Quotes page style */
+.card {
+  width: 311px;
+  height: 316px;
+  font-size: 20px;
+  margin: auto;
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 17px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 70px;
+}
+
+.card button {
+  width: 153px;
+  height: 47px;
+  background-color: black;
+  color: aliceblue;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+/* Quotes page style ends */
+
+
+/* Nav Bar Style */
+.nav_bar {
+  height: 63px;
+  padding: 5px;
+  text-align: center;
+  position: fixed;
+  z-index: 100; 
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+  background-color: white;
+}
+
+.nav_bar li {
+    display: inline-block;
+    width: 60px;
+    height: 42px;
+    text-align: center;
+    border-radius: 7px;
+    padding-top: 8px;
+    font-size: 12px;
+}
+
+.nav_bar li:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
