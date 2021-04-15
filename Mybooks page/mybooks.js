@@ -1,10 +1,9 @@
-let saveArray=['Gw3c2Nj_IiMC'];
-localStorage.setItem('savedBooks',JSON.stringify(saveArray))
+
 let save=JSON.parse(localStorage.getItem('savedBooks'))
 
-for(let i=0; i<saveArray.length; i++){
-    console.log(1);
-    addBooks(saveArray[i])
+for(let i=0; i<save.length; i++){
+    
+    addBooks(save[i])
 }
 function creatBookContainer(url, name, author, bookId) {
     let bookContainer = document.createElement("div");
@@ -37,8 +36,7 @@ function creatBookContainer(url, name, author, bookId) {
   }
 
   function addBooks(id){
-   console.log(2);
-   console.log(id);
+  
 
    fetch(`https://www.googleapis.com/books/v1/volumes/${id}`)
    .then(response => {return response.json()})
