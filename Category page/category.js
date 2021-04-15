@@ -1,8 +1,7 @@
-// let details =JSON.parse(localStorage.getItem('categoryDetails'))[0]
-let details = "Art"
+let details = JSON.parse(localStorage.getItem('catagoryDetails'))[0]
 let categoryName = document.createElement("h3");
 categoryName.setAttribute("class", "header-text");
-let text = document.createTextNode(details);
+let text = document.createTextNode(`${details} Category`);
 
 categoryName.appendChild(text);
 document.querySelector(".category-hearder").appendChild(categoryName);
@@ -14,7 +13,7 @@ function creatBookContainer(url, name, author, bookId) {
 
   let bookCover = document.createElement("img");
   bookCover.setAttribute("src", `${url}`);
-  bookCover.setAttribute("class", `book-cover  ${bookId}`);
+  bookCover.setAttribute("class", `book-cover ${bookId}`);
   bookCover.addEventListener("click", addBook);
 
   let bookName = document.createElement("p");
@@ -53,18 +52,18 @@ fetch(
         let cover = element.volumeInfo.imageLinks.thumbnail;
         let name = element.volumeInfo.title;
         let author = element.volumeInfo.authors[0];
-        let bookId = element.id;//
+        let bookId = element.id;
         if (name.length > 35) {
           name = name.slice(0, 35) + "...";
         }
         if (author.length > 25) {
           author = author.slice(0, 25) + "...";
         }
-
         creatBookContainer(cover, name, author, bookId);
       }
     });
   });
+
   //**When the user click on the book img,name,auothor this function will take the user to the book details page */
   function addBook(event){
     let bookArray = []
@@ -72,5 +71,6 @@ fetch(
     localStorage.setItem("bookDetails", JSON.stringify(bookArray))
     window.location.href = "..\\Book page\\book.html"
 }
+
 
 
