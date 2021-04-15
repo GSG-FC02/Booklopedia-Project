@@ -86,7 +86,7 @@
   font-size: 12px;
 }
 .nav_bar a{
-  width: 25%;
+  width: 23%;
   border-radius: 10px;
 }
 .nav_bar a:last-child{
@@ -94,7 +94,7 @@
   color: white;
 }
 
-.nav_bar li:hover {
+.nav_bar a:hover {
   background-color: black;
   color: white;
   cursor: pointer;
