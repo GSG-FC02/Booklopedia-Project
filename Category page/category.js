@@ -13,7 +13,7 @@ function creatBookContainer(url, name, author, bookId) {
 
   let bookCover = document.createElement("img");
   bookCover.setAttribute("src", `${url}`);
-  bookCover.setAttribute("class", `book-cover  ${bookId}`);
+  bookCover.setAttribute("class", `book-cover ${bookId}`);
   bookCover.addEventListener("click", addBook);
 
   let bookName = document.createElement("p");
@@ -71,5 +71,6 @@ fetch(
     localStorage.setItem("bookDetails", JSON.stringify(bookArray))
     window.location.href = "..\\Book page\\book.html"
 }
+
 
 
