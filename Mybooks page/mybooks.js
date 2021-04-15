@@ -5,22 +5,22 @@ for(let i=0; i<save.length; i++){
     
     addBooks(save[i])
 }
-function creatBookContainer(url, name, author, bookId) {
+function creatBookContainer(url, name, author, id) {
     let bookContainer = document.createElement("div");
-    bookContainer.setAttribute("class", `book-container ${bookId}`);
+    bookContainer.setAttribute("class", `book-container ${id}`);
     bookContainer.addEventListener("click", addBook);
   
     let bookCover = document.createElement("img");
     bookCover.setAttribute("src", `${url}`);
-    bookCover.setAttribute("class", `book-cover  ${bookId}`);
+    bookCover.setAttribute("class", `book-cover  ${id}`);
     bookCover.addEventListener("click", addBook);
   
     let bookName = document.createElement("p");
-    bookName.setAttribute("class", `book-name ${bookId}`);
+    bookName.setAttribute("class", `book-name ${id}`);
     bookName.addEventListener("click", addBook);
   
     let bookAuthor = document.createElement("p");
-    bookAuthor.setAttribute("class", `book-author ${bookId}`);
+    bookAuthor.setAttribute("class", `book-author ${id}`);
     bookAuthor.addEventListener("click", addBook);
   
     let nameText = document.createTextNode(name);
@@ -36,8 +36,6 @@ function creatBookContainer(url, name, author, bookId) {
   }
 
   function addBooks(id){
-  
-
    fetch(`https://www.googleapis.com/books/v1/volumes/${id}`)
    .then(response => {return response.json()})
         .then(data => {
@@ -57,9 +55,10 @@ function creatBookContainer(url, name, author, bookId) {
         
         }
         
-        function addBook(event){
+    function addBook(event){
             let bookArray = []
             bookArray.push(event.target.className.split(" ")[1])
+            console.log(bookArray)
             localStorage.setItem("bookDetails", JSON.stringify(bookArray))
             window.location.href = "..\\Book page\\book.html"}
 

@@ -107,6 +107,9 @@ body{
 
 /* Styling footer section start */
 .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     height: 63px;
     padding: 5px;
     text-align: center;
@@ -116,24 +119,27 @@ body{
     left: 0;
     width: 100%;
     background-color: white;
-}
-.nav-bar li {
+  }
+  .nav-bar li {
     display: inline-block;
-    width: 60px;
     height: 42px;
     text-align: center;
     border-radius: 7px;
     padding-top: 8px;
     font-size: 12px;
-}
-.nav-bar li:hover {
+  }
+  .nav-bar a{
+    width: 25%;
+    border-radius: 10px;
+  }
+  .nav-bar li:hover {
     background-color: black;
     color: white;
     cursor: pointer;
-}
-.nav-bar a{
+  }
+  .nav-bar a{
     text-decoration: none;
     color:black ;
-}
-/* Styling footer section end */
-
+  }
+  /* Styling footer end */
+  
