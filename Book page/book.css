@@ -39,7 +39,7 @@ body{
     position: absolute;
     width: 80px;
     height: 43px;
-    left: 239px;
+    right: 15%;
     top: 247px;
     border-radius: 15px;
     background-color: #191927;
@@ -67,6 +67,28 @@ body{
     color: #191927;
     font-family: 'Montserrat', sans-serif;
 }
+
+@media screen and (min-width: 425px) {
+    .book-details{
+        left:50%
+    }
+}
+@media screen and (min-width: 768px) {
+    .book-details{
+        left:30%
+    }
+}
+@media screen and (min-width: 1024px) {
+    .book-details{
+        left:25%
+    }
+}
+@media screen and (min-width: 1440px) {
+    .book-details{
+        left:20%
+    }
+}
+
 .book-details p:first-child{
     margin: 0 0 10px 0;
     font-size: 17px;
